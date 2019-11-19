@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		27248B5B223701D000344333 /* NotesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27248B5A223701D000344333 /* NotesPresenter.swift */; };
+		4E4E0F6423838F320068E5DA /* NotesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4E0F6323838F320068E5DA /* NotesDataSource.swift */; };
+		4E4E0F66238394400068E5DA /* Assembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4E0F65238394400068E5DA /* Assembler.swift */; };
+		4E4E0F68238398FD0068E5DA /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4E0F67238398FD0068E5DA /* Navigator.swift */; };
+		4E4E0F6A23839C060068E5DA /* NoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4E0F6923839C060068E5DA /* NoteTableViewCell.swift */; };
+		4E4E0F6C23839F310068E5DA /* NewNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4E0F6B23839F310068E5DA /* NewNoteViewController.swift */; };
 		8429C9C71EAECCA8004A5E2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8429C9C61EAECCA8004A5E2B /* AppDelegate.swift */; };
 		8429C9CC1EAECCA8004A5E2B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8429C9CA1EAECCA8004A5E2B /* Main.storyboard */; };
 		8429C9D11EAECCA8004A5E2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8429C9D01EAECCA8004A5E2B /* Assets.xcassets */; };
@@ -19,6 +24,11 @@
 
 /* Begin PBXFileReference section */
 		27248B5A223701D000344333 /* NotesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesPresenter.swift; sourceTree = "<group>"; };
+		4E4E0F6323838F320068E5DA /* NotesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesDataSource.swift; sourceTree = "<group>"; };
+		4E4E0F65238394400068E5DA /* Assembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembler.swift; sourceTree = "<group>"; };
+		4E4E0F67238398FD0068E5DA /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
+		4E4E0F6923839C060068E5DA /* NoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableViewCell.swift; sourceTree = "<group>"; };
+		4E4E0F6B23839F310068E5DA /* NewNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNoteViewController.swift; sourceTree = "<group>"; };
 		8429C9C31EAECCA8004A5E2B /* TestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8429C9C61EAECCA8004A5E2B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8429C9CB1EAECCA8004A5E2B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -54,8 +64,18 @@
 			children = (
 				8429C9DE1EAECD2C004A5E2B /* NotesViewController.swift */,
 				27248B5A223701D000344333 /* NotesPresenter.swift */,
+				4E4E0F6923839C060068E5DA /* NoteTableViewCell.swift */,
+				4E4E0F6B23839F310068E5DA /* NewNoteViewController.swift */,
 			);
 			path = Notes;
+			sourceTree = "<group>";
+		};
+		4E4E0F6223838F160068E5DA /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				4E4E0F6323838F320068E5DA /* NotesDataSource.swift */,
+			);
+			path = DataSource;
 			sourceTree = "<group>";
 		};
 		8429C9BA1EAECCA8004A5E2B = {
@@ -77,6 +97,7 @@
 		8429C9C51EAECCA8004A5E2B /* TestApp */ = {
 			isa = PBXGroup;
 			children = (
+				4E4E0F6223838F160068E5DA /* DataSource */,
 				27248B582237013500344333 /* Scenes */,
 				8429C9DC1EAECD0B004A5E2B /* Model */,
 				8429C9C61EAECCA8004A5E2B /* AppDelegate.swift */,
@@ -84,6 +105,8 @@
 				8429C9D01EAECCA8004A5E2B /* Assets.xcassets */,
 				8429C9D21EAECCA8004A5E2B /* LaunchScreen.storyboard */,
 				8429C9D51EAECCA8004A5E2B /* Info.plist */,
+				4E4E0F65238394400068E5DA /* Assembler.swift */,
+				4E4E0F67238398FD0068E5DA /* Navigator.swift */,
 			);
 			path = TestApp;
 			sourceTree = "<group>";
@@ -124,19 +147,19 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 1030;
 				ORGANIZATIONNAME = AlayaCare;
 				TargetAttributes = {
 					8429C9C21EAECCA8004A5E2B = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = AUCWMQ5DFY;
-						ProvisioningStyle = Manual;
+						DevelopmentTeam = KF2KVXY9S6;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
 			buildConfigurationList = 8429C9BE1EAECCA8004A5E2B /* Build configuration list for PBXProject "TestApp" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -172,7 +195,12 @@
 			files = (
 				8429C9DF1EAECD2C004A5E2B /* NotesViewController.swift in Sources */,
 				8429C9E21EAECD34004A5E2B /* TestApp.xcdatamodeld in Sources */,
+				4E4E0F66238394400068E5DA /* Assembler.swift in Sources */,
+				4E4E0F6423838F320068E5DA /* NotesDataSource.swift in Sources */,
 				27248B5B223701D000344333 /* NotesPresenter.swift in Sources */,
+				4E4E0F6C23839F310068E5DA /* NewNoteViewController.swift in Sources */,
+				4E4E0F6A23839C060068E5DA /* NoteTableViewCell.swift in Sources */,
+				4E4E0F68238398FD0068E5DA /* Navigator.swift in Sources */,
 				8429C9C71EAECCA8004A5E2B /* AppDelegate.swift in Sources */,
 				8429C9E41EAECD48004A5E2B /* Note.swift in Sources */,
 			);
@@ -204,21 +232,30 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -247,6 +284,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -254,21 +292,30 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -289,6 +336,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -297,14 +345,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = AUCWMQ5DFY;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KF2KVXY9S6;
 				INFOPLIST_FILE = TestApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = alayacare.TestApp;
+				PRODUCT_BUNDLE_IDENTIFIER = larissamagalhaes.alayacare.TestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "c8f191f5-e413-4a27-a984-27100765bc21";
-				PROVISIONING_PROFILE_SPECIFIER = "XC: *";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -313,14 +362,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = AUCWMQ5DFY;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KF2KVXY9S6;
 				INFOPLIST_FILE = TestApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = alayacare.TestApp;
+				PRODUCT_BUNDLE_IDENTIFIER = larissamagalhaes.alayacare.TestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "c8f191f5-e413-4a27-a984-27100765bc21";
-				PROVISIONING_PROFILE_SPECIFIER = "XC: *";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
