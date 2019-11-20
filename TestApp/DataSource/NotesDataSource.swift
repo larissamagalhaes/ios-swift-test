@@ -60,6 +60,15 @@ class NotesDataSource {
         }
     }
     
+    func delete(note: Note, completion: @escaping (([Note]) -> ())) {
+        DispatchQueue.global(qos: .userInteractive).async {
+            if let index = self.notes.firstIndex(where: {$0.id == note.id }) {
+                self.notes.remove(at: index)
+                completion(self.notes)
+            }
+        }
+    }
+    
     private func getNoteBy(id: String) -> Note? {
         return notes
             .filter { note in note.id == id }

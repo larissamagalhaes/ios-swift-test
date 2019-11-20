@@ -10,6 +10,7 @@ protocol NotesView: class {
     
     func showNotes(notes: [Note])
     func showResult(notes: [Note])
+    func updateNotes(notes: [Note])
 }
 
 class NotesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, NotesView, UISearchBarDelegate {
@@ -57,6 +58,24 @@ class NotesViewController: UIViewController, UITableViewDataSource, UITableViewD
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let note = notes[indexPath.row]
         presenter?.didSelect(note: note)
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.delete) {
+            let note = notes[indexPath.row]
+            notes.remove(at: indexPath.row)
+            presenter?.deleteNote(note: note)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+
+        }
+    }
+    
+    func updateNotes(notes: [Note]) {
+        self.notes = notes
     }
 
     func showNotes(notes: [Note]) {

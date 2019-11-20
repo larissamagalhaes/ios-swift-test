@@ -13,6 +13,7 @@ protocol INotesPresenter {
     func didSelect(note: Note)
     func composeNewNote()
     func searchBy(text: String)
+    func deleteNote(note: Note)
 }
 
 class NotesPresenter: INotesPresenter {
@@ -53,6 +54,14 @@ class NotesPresenter: INotesPresenter {
         dataSource.searchBy(text: text) { (notes) in
             DispatchQueue.main.async {
                 self.view?.showResult(notes: notes)
+            }
+        }
+    }
+    
+    func deleteNote(note: Note) {
+        dataSource.delete(note: note) { result in
+            DispatchQueue.main.async {
+                self.view?.updateNotes(notes: result)
             }
         }
     }
