@@ -26,7 +26,7 @@ class Navigator {
     }
     
     func navigateToNoteDetailBy(id: String) {
-        let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "newNoteViewController") as! NoteDetailViewController
+        let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "detailNoteViewController") as! NoteDetailViewController
         let dataSource = NotesDataSource.shared
         let presenter = NoteDetailPresenter(view: viewController, dataSource: dataSource, id: id)
         viewController.presenter = presenter
@@ -34,7 +34,7 @@ class Navigator {
     }
     
     func navigateToComposeNewNoteView() {
-        let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "newNoteViewController") as! NoteDetailViewController
+        let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "detailNoteViewController") as! NoteDetailViewController
         let dataSource = NotesDataSource.shared
         let presenter = NoteDetailPresenter(view: viewController, dataSource: dataSource)
         viewController.presenter = presenter

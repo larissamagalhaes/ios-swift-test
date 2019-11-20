@@ -131,7 +131,7 @@
         <!--New Note-->
         <scene sceneID="sfG-eJ-8Os">
             <objects>
-                <viewController storyboardIdentifier="newNoteViewController" id="iPF-cn-FQI" customClass="NoteDetailViewController" customModule="TestApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="detailNoteViewController" id="iPF-cn-FQI" customClass="NoteDetailViewController" customModule="TestApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gzy-VU-ojq"/>
                         <viewControllerLayoutGuide type="bottom" id="Ab2-VZ-PO2"/>
