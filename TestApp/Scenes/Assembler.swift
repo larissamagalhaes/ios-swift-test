@@ -13,7 +13,7 @@ class Assembler {
 
     func notesViewController() -> NotesViewController {
         let viewController = UIStoryboard(name: "Main" , bundle: nil).instantiateViewController(withIdentifier: "notesViewController") as! NotesViewController
-        let dataSource = NotesDataSource()
+        let dataSource = NotesDataSource.shared
         let presenter = NotesPresenter(view: viewController, dataSource: dataSource)
         viewController.presenter = presenter
         return viewController

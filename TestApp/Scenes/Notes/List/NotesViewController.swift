@@ -9,15 +9,17 @@ import UIKit
 protocol NotesView: class {
     
     func showNotes(notes: [Note])
+    func showResult(notes: [Note])
 }
 
-class NotesViewController: UIViewController, UITableViewDataSource, NotesView {
+class NotesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, NotesView, UISearchBarDelegate {
     
     private var notes: [Note] = []
 
     // MARK: - Variables
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     var presenter: INotesPresenter?
 
@@ -25,8 +27,13 @@ class NotesViewController: UIViewController, UITableViewDataSource, NotesView {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.tableFooterView = UIView(frame: CGRect.zero)
         presenter?.viewDidLoad()
-
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        presenter?.viewDidLoad()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -46,6 +53,11 @@ class NotesViewController: UIViewController, UITableViewDataSource, NotesView {
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let note = notes[indexPath.row]
+        presenter?.didSelect(note: note)
+    }
 
     func showNotes(notes: [Note]) {
         self.notes = notes
@@ -54,6 +66,24 @@ class NotesViewController: UIViewController, UITableViewDataSource, NotesView {
     
     @IBAction func newNoteTouchUpInside(_ sender: UIBarButtonItem) {
         presenter?.composeNewNote()
+    }
+    
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if (!searchText.isEmpty) {
+            presenter?.searchBy(text: searchText)
+        } else {
+            presenter?.reloadNotes()
+        }
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        presenter?.reloadNotes()
+    }
+    
+    func showResult(notes: [Note]) {
+        self.notes = notes
+        tableView.reloadData()
     }
     
 }
